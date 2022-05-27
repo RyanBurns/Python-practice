@@ -148,3 +148,37 @@ while i <= 10:
 	print(i)
 	i += 1
 new()
+##	Everyday tools in Python	##
+
+	#Test internet speed
+
+# pip install pyspeedtest
+# pip install speedtest
+# pip install speedtest-cli#method 1
+import speedtestspeedTest = speedtest.Speedtest() 
+print(speedTest.get_best_server())#Check download speed 
+print(speedTest.download())#Check upload speed
+print(speedTest.upload())# Method 2import pyspeedtest
+st = pyspeedtest.SpeedTest()
+st.ping()
+st.download()
+st.upload()
+
+#	Web bot for scraping/automation
+
+# pip install seleniumimport time
+from selenium import webdriver
+from selenium.webdriver.common.keys import Keysbot = webdriver.Chrome("chromedriver.exe")
+bot.get('http://www.google.com')search = bot.find_element_by_name('q')
+search.send_keys("@codedev101")
+search.send_keys(Keys.RETURN)
+time.sleep(5)
+bot.quit()
+
+# Check website status
+
+# pip install requests#method 1import urllib.requestfrom urllib.request import Request, urlopenreq = Request('https://medium.com/@codedev101', headers={'User-Agent': 'Mozilla/5.0'})
+webpage = urlopen(req).getcode()
+print(webpage) # 200# method 2import requests
+r = requests.get("https://medium.com/@codedev101")
+print(r.status_code) # 200
